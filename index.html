@@ -5,44 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<div class= "header">
-    <h1>Password Generator
-    </h1>
-</div>
-
-<div class= "card">
-    <div class= "container"> 
-        <div class= "card-title">
-            <h1>Generate a Password
-            </h1>
-        </div>
-
-        <div class= "row">
-            <div class= "col-12">
-                <h3>Your Secure Password
-                </h3>
-            </div>
-        </div>
-
-        <div class= "row">
-            <div class= "col-sm-12, col-lg-6">
-                <button>Generate Password
-            </div>
-        </div>
-            
-        <div class= "row">
-            <div class= "col-sm-12, col-md-6, col-lg-6">
-                <button>Copy to Clipboard
-            </div>
-        </div>
-    </div>  
-       
-</div>   
+     <header>
+        <h1>Password Generator</h1>
+    </header>
+    <h2>Generate a Password</h2>
+    <textarea
+        readonly
+        id="password"
+        placeholder="Your Secure Password"
+    ></textarea>
+    <button id="generate">Generate Password</button>
+    <button id="copy">Copy to Clipboard</button>  
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
