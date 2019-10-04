@@ -24,7 +24,7 @@ function generate ()  {
     
     var password = "";
     
-    for (var i=0; i<128; i++) {
+    for (var i=0; i<=plength; i++) {
         
         var arrs = allArrs[Math.floor(Math.random()*allArrs.length)];
     
