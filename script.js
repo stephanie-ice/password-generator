@@ -1,12 +1,12 @@
 function generate ()  {
 
-    var lowAlpha = ["a","b","c","d","e","f","g","h","i","j"];
+    var lowAlpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     
-    var uppAlpha = ["A","B","C","D","E","F","G","H","I","J"];
+    var uppAlpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     
     var number = [0,1,2,3,4,5,6,7,8,9];
     
-    var specChar = ["!","@","#","$","%","^"];
+    var specChar = ["!","@","#","$","%","^","&","*"];
     
     var allArrs = [lowAlpha,uppAlpha,number,specChar];
     
@@ -26,9 +26,22 @@ function generate ()  {
 
     return password
 }
-       
+
+/* This is the generate password button funtionality*/
 document.getElementById("generate").addEventListener("click", function(){
     var password = generate ()
-    document.getElementById("password").value = password
-    document.getElementById("generate").textContent = "example"
+    document.getElementById("password").value = password;
+
 });
+
+/*This is the copy button functionality
+document.getElementById("copy").addEventListener("click", function (){
+    
+        document.getElementById("password").textContent;
+       select();
+       document.execCommand('copy'); 
+       blur();
+});
+*/
+
+
