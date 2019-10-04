@@ -1,3 +1,15 @@
+var plength = prompt("How many characters does your password need? Please choose a number between 8 and 128.");
+
+    console.log(parseInt(plength));
+
+    if (plength >=8 && plength <=128) {
+        alert("You chose "+ plength);
+    } else {
+        prompt("Please choose a password length between 8 and 128.")
+        /*how to cycle back to beginning?*/
+    }
+
+
 function generate ()  {
 
     var lowAlpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
