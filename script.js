@@ -1,16 +1,14 @@
 var plength = prompt("How many characters does your password need? Please choose a number between 8 and 128.");
-
     console.log(parseInt(plength));
 
-    if (plength >=8 && plength <=128) {
-        alert("You chose "+ plength);
-    } else {
-        prompt("Please choose a password length between 8 and 128.")
-        /*how to cycle back to beginning?*/
-    }
+if (plength >=8 && plength <=128) 
+alert("You chose "+ plength);
+else 
+prompt("Please choose a password length between 8 and 128.")
+    /*how to get this to repeat if needed?*/
 
 
-function generate ()  {
+    var userInput = []
 
     var lowAlpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     
@@ -20,40 +18,55 @@ function generate ()  {
     
     var specChar = ["!","@","#","$","%","^","&","*"];
     
-    var allArrs = [lowAlpha,uppAlpha,number,specChar];
-    
-    var password = "";
-    
-    for (var i=0; i<=plength; i++) {
-        
-        var arrs = allArrs[Math.floor(Math.random()*allArrs.length)];
-    
-        var digit = arrs[Math.floor(Math.random()* arrs.length)];
-        
-        password += digit;
-    
+    if (confirm("Does your password require lowercase letters?")== true) {
+        userInput.push(lowAlpha)
     }
-    
-    console.log ("password: ", password);
+    if (confirm("Does your password require uppercase letters?")== true) {
+        userInput.push(uppAlpha)
+    }
+    if (confirm("Does your password require numbers?")== true) {
+        userInput.push(number)
+    }
+    if (confirm("Does your password require special characters?")== true) {
+        userInput.push(specChar)
+    }
+    console.log (userInput);   
 
-    return password
-}
+    function generate (passwordLength)  {
+
+        var password = "";
+    
+        for (var i=0; i<passwordLength; i++) {
+            
+            var arrs = userInput[Math.floor(Math.random()*userInput.length)];
+        
+            var digit = arrs[Math.floor(Math.random()* arrs.length)];
+            
+            password += digit;
+        
+        }
+    
+        console.log ("password: ", password);
+
+        return password
+    }
+
 
 /* This is the generate password button funtionality*/
 document.getElementById("generate").addEventListener("click", function(){
-    var password = generate ()
+    var password = generate (plength)
     document.getElementById("password").value = password;
 
 });
 
-/*This is the copy button functionality
+/*This is the copy button functionality*/
 document.getElementById("copy").addEventListener("click", function (){
     
-        document.getElementById("password").textContent;
-       select();
-       document.execCommand('copy'); 
-       blur();
+    var copyText = document.getElementById("password");
+    copyText.select();
+    
+    document.execCommand('copy'); 
 });
-*/
+
 
 
