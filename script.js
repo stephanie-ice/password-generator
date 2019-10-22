@@ -1,12 +1,19 @@
 var plength = prompt("How many characters does your password need? Please choose a number between 8 and 128.");
     console.log(parseInt(plength));
 
-if (plength >=8 && plength <=128) 
-alert("You chose "+ plength);
-else 
-prompt("Please choose a password length between 8 and 128.")
-    /*how to get this to repeat if needed?*/
-
+while  (plength <8 || plength >128) {
+    
+  if (plength >=8 && plength <=128) {
+        alert("You chose "+ plength)
+    }
+ else { prompt("Please choose a password length between 8 and 128.")
+    
+    }
+}; /*So, I added a while loop that now prompts the user again if the character length is less
+than 8 or more than 128.  Problem, though, is that it will continue prompting the user, and
+will not accept new input that is entered the second time.  It also keeps running, it's a goddamn 
+loop.  So it may just break the page or something.  But it works okay if the user follows the 
+instructions.*/
 
     var userInput = []
 
